@@ -47,7 +47,7 @@ HOST = "adarsh-gautam-sys"   # shown as  adarsh-gautam-sys@github  in the header
 
 ROWS = [
     ("host",),
-    ("kv", "Focus", "Software Eng · Cloud & Infra · Open Source"),
+    ("kv", "Focus", "Software Eng | Cloud & Infra | Open Source"),
     ("kv", "AI/ML", "LLMs, NLP, Agentic Systems, Computer Vision"),
     ("kv", "Web",   "TypeScript, Next.js, React, Node.js"),
     ("kv", "Cloud", "AWS, GCP, Docker, GitHub Actions"),
@@ -59,7 +59,7 @@ ROWS = [
     ("kv", "Data",      "Jupyter, Pandas, OpenCV, rembg"),
     ("gap",),
     ("sec", "Highlights"),
-    ("bul", "Google PromptWars 2026 — multiple challenge submissions"),
+    ("bul", "Google PromptWars 2026 -- multiple challenge submissions"),
     ("bul", "Built StadiumIQ, NyayaSetu, SMB-Intel & more at hackathons"),
     ("bul", "28 public + private repos across AI, web & cloud"),
 ]
@@ -81,6 +81,7 @@ def rise(inner, i):
 
 
 parts = [
+    '<?xml version="1.0" encoding="UTF-8"?>\n',
     f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
     f'font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">',
     '<defs>'
@@ -112,7 +113,7 @@ for i, row in enumerate(ROWS):
     elif kind == "sec":
         title = esc(row[1])
         inner = (f'<text x="{KEY_X}" y="{y:.1f}" fill="{SECTION}" font-size="12.5" font-weight="700">'
-                 f'&#8212; {title}</text>'
+                 f'-- {title}</text>'
                  f'<line x1="{KEY_X + 12 + len(row[1])*8}" y1="{y-4:.1f}" x2="{W-PAD}" y2="{y-4:.1f}" '
                  f'stroke="{FRAME}" stroke-opacity="0.8"/>')
     elif kind == "kv":
@@ -130,6 +131,6 @@ for i, row in enumerate(ROWS):
 
 parts.append("</svg>")
 svg = "".join(parts)
-with open(OUT, "w") as f:
+with open(OUT, "w", encoding="utf-8") as f:
     f.write(svg)
 print("wrote", OUT, len(svg), "bytes;", W, "x", H, "content_bottom", round(y))
