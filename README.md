@@ -14,7 +14,7 @@
 
 ## Adarsh Gautam
 
-**Software Engineer · Cloud & Infra · Open Source :) **
+**Software Engineer · Cloud & Infra · Open Source**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-adarshgautam01-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adarshgautam01/)
 
